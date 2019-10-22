@@ -69,7 +69,7 @@ class GridAdapter() : RecyclerView.Adapter<GridAdapter.Holder>() {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //            textView.background = parent.resources.getDrawable(R.drawable.common_border, null)
 //        }
-        textView.setBackgroundColor(Color.WHITE)
+        textView.setBackgroundDrawable(parent.resources.getDrawable(R.drawable.grid_cell_selector))
 
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16F)
 
@@ -100,7 +100,7 @@ class GridAdapter() : RecyclerView.Adapter<GridAdapter.Holder>() {
     override fun onBindViewHolder(holder: Holder, position: Int) {
         if (show) {
             if (holder.itemView is TextView) {
-                holder.itemView.setBackgroundColor(Color.WHITE)
+                holder.itemView.setBackgroundDrawable(holder.itemView.resources.getDrawable(R.drawable.grid_cell_selector))
                 holder.itemView.text = array!![position / size][position % size].toString()
             }
         }
